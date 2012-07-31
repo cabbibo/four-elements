@@ -1,0 +1,90 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+ font:76% normal verdana,arial,tahoma;
+}
+
+h1, h2 {
+ font-size:1em;
+}
+
+#leftObj {
+ /* simple box */
+ position:absolute;
+ left:0px;
+ top:0px;
+ width:400px;
+ height:45px;
+ line-height:3em;
+
+ white-space:nowrap;
+ 
+ overflow:hidden;
+ z-index:105;
+}
+#rightObj{
+ /* simple box */
+ position:absolute;
+ left:10px;
+ top:0px;
+ width:600px;
+ height:40px;
+ 
+ line-height:3em;
+ white-space:nowrap;
+ 
+ overflow:visible;
+  z-index:105;
+}
+
+#buttons{
+	position:absolute;
+	left:-165px;
+	top:-6px;
+}
+
+#buttons a{
+	width:100px;
+}
+
+#buttons img {
+	
+	width:51px;	
+}
+
+
+
+
+#dewplayer{
+	position:relative;
+	top:20px;
+	left:205px;
+}
+
+#control{
+	position:absolute;
+	left:-28px;
+}
+
+#pageInfo{
+	width:152px;
+	background:url(../images/trans55.png);
+	height:200px;
+	overflow:visible;
+	position:relative;
+	top:0px;
+	left:-162px;
+	
+	visibility:hidden;
+	-moz-border-radius: 5px;
+border-radius: 5px;
+}
+	
+	
+	#pageInfo p{
+		text-align:center;
+		width:140px;
+		
+	}
+

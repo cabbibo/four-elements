@@ -1,0 +1,179 @@
+<!--
+
+FOUR ELEMENTS BY CABBIBO
+
+Creative Commons
+Share Alike
+If you make money from this, consider giving me some.
+Also if you use the source, please let me know, 
+Just because I'm interested in what people are making.
+
+isaaclandoncohen@gmail.com
+
+-->
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Cabbibo.com</title>
+
+<link rel="shortcut icon" href="favicon.ico" />
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  
+
+<!-- Scripts & Style for the drawing part of the program-->
+<script type="text/javascript" src="Elements/js/elements.js"></script>
+<link href="Elements/css/elements.css" rel="stylesheet" type="text/css"/>
+
+
+<!--Scripts & Style for the slider UI-->
+<script src="Elements/js/sliderHorizontal.js"  type="text/javascript"></script>
+<link href="Elements/css/sliderHorizontal.css" type="text/css" rel="stylesheet"/>
+
+
+<!--Script for spinning of the image-->
+<script language="javascript" src="Elements/js/spinner.js"></script>
+
+
+<!--Script for saving the image-->
+<script language="javascript" src="Elements/js/saving.js"></script>
+
+<script language="javascript" src="Elements/js/changers.js"></script>
+
+
+
+<script language="javascript">
+var element;
+
+//hasBeenCalled is the variable that makes sure new rectangles don't get drawn while the shape is spinning
+var hasBeenCalled=0;
+
+
+//This is the function that is called when the page is loaded, see individual functions for descriptions
+function go(){
+	resize();
+	init();
+	firstElement();
+	changeColor();
+	goImgSpin();
+	var canvasElem = document.getElementById('canvas');
+	canvasElem.addEventListener("click", q, false);
+	canvasElem.addEventListener("mousedown",down,false);
+	canvasElem.addEventListener("mouseup",up,false);
+	canvasElem.addEventListener("mousemove",move,false);
+	
+
+	var userAgent = navigator.userAgent.toLowerCase(); 
+	$.browser.chrome = /chrome/.test(navigator.userAgent.toLowerCase()); 
+
+	// Is this a version of Chrome?
+	if($.browser.chrome){
+	  userAgent = userAgent.substring(userAgent.indexOf('chrome/') +7);
+	  userAgent = userAgent.substring(0,userAgent.indexOf('.'));
+	  $.browser.version = userAgent;
+	  // If it is chrome then jQuery thinks it's safari so we have to tell it it isn't
+	  $.browser.safari = false;
+	 $("#dialog").hide();
+	}else{
+	 document.getElementById("dialog").style.visibility="visible";
+	 $("#dialog").dialog({modal:true});
+	}
+	
+	
+	
+	
+}
+
+//function that is called when window is resized
+function onResize(){
+	resize();
+	goImgSpin();
+	
+}
+
+
+//function that is called to stop the image from spinning and allow the user to start creating new shapes
+function killSpin(){
+	stopDraw();
+	resize();
+	hasBeenCalled=0;
+	stopImgSpin();
+}
+
+window.onload=go;
+window.onresize=onResize;
+
+</script>
+
+
+
+</head>
+
+<body>
+
+
+<div id="dialog" title="Browser Incompatibilty"><p>This site requires the <a href="http://en.wikipedia.org/wiki/V8_(JavaScript_engine)" target="_blank">Google Chrome V8 Javascript Engine</a> to run properly. You can try it out in whatever browser you are using, but it won't run as quickly as it would in Chrome. Infact, It may not run at all.</p><p><a href="https://www.google.com/intl/en/chrome/browser/" target="_blank">Download Chrome Now</a> </p>  <p><a href="Elements_By_Cabbibo.zip">Download The Source</a></p> </div>
+
+<div id="canvases">
+<canvas id="canvas" width="1000" height="900" ></canvas>
+<canvas id="canvas2" width="1000" height="900" ></canvas>
+
+</div>
+<!--
+<div class="social"><a href="" onclick="changeLock()"><img src="fbTransWhite.png"/></a><img src="twitTransWhite.png"/></div>
+-->
+
+
+
+<!--The Slider User Interface-->
+<div id="control">
+
+	<!--this is added to make the javascript for the slider function, definitly not optimized, but how the slider javascript works...-->
+	<div id="leftObj" >
+
+	</div>
+
+
+	<!--This is the object that contains all the navigation information-->
+	<div id="rightObj" >
+	<a onclick="moveHor(0)"><img id="slider" src="Elements/images/navBar/icons/slide.png" height="90%"/></a>
+		
+        <div id="buttons">
+            <a  id="infoButton" onclick="showInfo()"></a>
+            <a id="storeButton" href="http://cabbibo.bigcartel.com" target="_blank"></a>
+            <a id="spinButton" onclick="changeImgSpin()"></a>
+            <a  id="elementButton" onmouseover="showElementInfo()"  onmouseout="hideElementInfo()"onclick="changeColor()"></a>		
+    	</div>
+        
+        <div id="pageInfo">
+        	<div id="infoText">
+        
+        
+        		<p>Click to make new rings. Mouse position will change size of squares, radius of rotation, and hue. </p>
+        		<p>Download source <a href="Elements_By_Cabbibo.zip">here</a> and use at will.</p>
+        		<p><a href="mailto:isaaclandoncohen@gmail.com" target="_blank">Contact Me</a> for any questions, feedback, or just to chat.</p>
+       		 </div>
+        	<a id="stumbleButton" href="http://www.stumbleupon.com/submit?url=http://www.cabbibo.com" target="_blank"></a>
+        	<a id="fbButton" href="http://www.facebook.com/sharer.php?u=http://cabbibo.com/&t=Cabbibo" target="_blank" target="_blank"></a>
+        	<a id="twitButton"href="http://twitter.com/share?url=http://cabbibo.com&text=Warning: viewing may cause premature enlightment in pregnant women. Made By @cabbibo&count=horiztonal" target="_blank" rel="nofollow"></a>
+        	<a id="hnrButton"href="http://thehitandrun.com" target="_blank" ></a>
+        </div>
+	</div>
+    
+</div>
+
+
+</div>
+
+
+</body>
+</html>

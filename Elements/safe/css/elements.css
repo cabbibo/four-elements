@@ -1,0 +1,67 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#canvas{
+	  position:absolute;
+	  top:0px;
+	  left:0px;
+	  z-index:100;
+  }
+#canvas2{
+	  position:absolute;
+	  top:0px;
+	  left:0px;
+	  z-index:-4;
+  }
+#canvas3{
+	  position:absolute;
+	  top:0px;
+	  left:0px;
+	  z-index:-100;
+  }
+  
+
+
+  body {
+	background-image:none;
+	
+	background-repeat: no-repeat;
+	background-position:center center;
+	background-attachment:fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+
+  
+  .social{
+	  width:50px;
+	  z-index:101;
+	  height:50px;
+  }
+  
+  .social img{
+	width:50%;  
+	  
+  }
+  
+  #changeElement{
+	  z-index:99;
+  }
+  
+   #changeElement img{
+	  z-index:99;
+  }
+  
+  
+  
+  #canvases{
+	position:absolute;
+	top:0px;
+	left:0px;
+	overflow:hidden;
+	width:1000px;
+	height:700px;  
+  }

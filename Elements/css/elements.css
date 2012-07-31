@@ -1,0 +1,81 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#canvas{
+	
+	  position:absolute;
+	  top:0px;
+	  left:0px;
+	  z-index:998;
+  }
+  
+  
+ /*This Canvas for Saving Images, but was never implemented....
+ IF You can think of a way to download the image, please let me know, I would love to add it*/
+#canvas2{
+	background:none;
+		background-repeat: no-repeat;
+	background-position:center center;
+	background-attachment:fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	visibility:hidden;
+	  position:absolute;
+	  top:0px;
+	  left:0px;
+	  z-index:99;
+  }
+
+
+
+  body {
+	background-image:none;
+	background-color:#000;
+	background-repeat: no-repeat;
+	background-position:center center;
+	background-attachment:fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+
+  
+  .social{
+	  width:50px;
+	  z-index:101;
+	  height:50px;
+  }
+  
+  .social img{
+	width:50%;  
+	  
+  }
+  
+  #changeElement{
+	  z-index:99;
+  }
+  
+   #changeElement img{
+	  z-index:99;
+  }
+  
+  
+  
+  #canvases{
+	position:absolute;
+	top:0px;
+	left:0px;
+	overflow:hidden;
+	width:1000px;
+	height:700px;  
+  }
+  
+  
+  /* To Keep From weird Loading*/
+ #dialog{
+	 visibility:hidden;
+ }

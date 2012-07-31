@@ -1,0 +1,202 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+ font:76% normal verdana,arial,tahoma;
+ background-color:#000;
+}
+
+h1, h2 {
+ font-size:1em;
+}
+
+#leftObj {
+ /* simple box */
+ position:absolute;
+ left:0px;
+ top:0px;
+ width:400px;
+ height:45px;
+ line-height:3em;
+
+ white-space:nowrap;
+ 
+ overflow:hidden;
+ z-index:999;
+}
+#rightObj{
+ /* simple box */
+ position:absolute;
+ left:10px;
+ top:0px;
+ width:600px;
+ height:40px;
+ 
+ line-height:3em;
+ white-space:nowrap;
+ 
+ overflow:visible;
+  z-index:999;
+}
+
+#buttons{
+	position:absolute;
+	left:-196px;
+	top:-6px;
+}
+
+#buttons a{
+	width:45px;
+
+	height:45px;
+	display:inline-block;
+}
+
+#buttons img {
+	
+
+}
+
+
+
+#elementButton{
+	background:url(../images/navBar/icons/water.png);
+}
+#elementButton:hover{
+	background:url(../images/navBar/text/changeElement.png);
+}
+
+#spinButton{
+	background:url(../images/navBar/icons/spin.png);
+}
+#spinButton:hover{
+	background:url(../images/navBar/text/changeSpin.png);
+}
+
+#saveButton{
+	background:url(../images/navBar/icons/download.png);
+}
+#saveButton:hover{
+	background:url(../images/navBar/text/download.png);
+}
+
+
+#infoButton{
+	background:url(../images/navBar/icons/info.png);
+}
+#infoButton:hover{
+	background:url(../images/navBar/text/info.png);
+}
+
+
+
+
+#dewplayer{
+	position:relative;
+	top:20px;
+	left:205px;
+}
+
+#control{
+	position:absolute;
+	left:-28px;
+}
+
+#pageInfo{
+	width:192px;
+	background:url(../images/trans55.png);
+	height:300px;
+	overflow:visible;
+	position:relative;
+	top:10px;
+	left:-196px;
+	
+	visibility:hidden;
+	-moz-border-radius: 5px;
+border-radius: 5px;
+}
+
+#pageInfo a{
+	position:relative;
+	top:310px;
+	width:45px;
+	height:45px;
+	display:inline-block;
+}
+
+
+#storeButton{
+	background:url(../images/navBar/icons/logo.png);
+}
+#storeButton:hover{
+	background:url(../images/navBar/text/store.png);
+}
+
+#stumbleButton{
+	background:url(../images/navBar/icons/stumble.png);
+}
+#stumbleButton:hover{
+	background:url(../images/navBar/text/share.png);
+}
+
+#fbButton{
+	background:url(../images/navBar/icons/fb.png);
+}
+#fbButton:hover{
+	background:url(../images/navBar/text/share.png);
+}
+
+#twitButton{
+	background:url(../images/navBar/icons/twit.png);
+}
+#twitButton:hover{
+	background:url(../images/navBar/text/share.png);
+}
+
+#hnrButton{
+	background:url(../images/navBar/icons/hnr.png);
+}
+#hnrButton:hover{
+	background:url(../images/navBar/text/hnr.png);
+}
+	
+#infoText{
+		opacity:.8;
+		position:absolute;
+		color:#FFF;
+		width:160px;
+		height:200px;
+		
+		top:0px;
+		left:10px;
+		line-height:20px;
+		
+
+		
+	}
+#infoText p{
+	float:left;
+	position:relative;
+	width:170px;
+	white-space:normal;
+}
+
+#infoText a{
+color:#fff;
+font-weight:bold;
+text-decoration:none;
+position:relative;
+top:0px;
+width:auto;
+height:auto;
+}
+#infoText a:hover{
+	text-decoration:underline;
+}
+	
+	
+#saveImage{z-index:101;}
+
+#tester{
+	background-color:#3F0;
+}
